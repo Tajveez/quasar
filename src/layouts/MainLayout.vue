@@ -5,13 +5,10 @@
         <q-btn dense flat round icon="menu" @click="left = !left" />
 
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg" />
-          </q-avatar>
-          Title
+          Twitto
         </q-toolbar-title>
 
-        <q-btn dense flat round icon="menu" @click="right = !right" />
+        <!-- <q-btn dense flat round icon="menu" @click="right = !right" /> -->
       </q-toolbar>
 
       <q-tabs align="left">
