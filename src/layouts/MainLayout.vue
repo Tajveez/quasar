@@ -1,10 +1,10 @@
 <template>
   <q-layout view="lHr lpR fFf">
-    <q-header elevated class="bg-primary text-white" height-hint="98">
+    <q-header elevated class="bg-white text-black" height-hint="98">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="left = !left" />
 
-        <q-toolbar-title>
+        <q-toolbar-title class="text-weight-bold">
           Twitto
         </q-toolbar-title>
 
