@@ -20,6 +20,7 @@
 
     <q-drawer show-if-above v-model="left" side="left" bordered>
       <!-- drawer content -->
+      <q-icon class="q-pa-md" name="fas fa-crow" size="lg" color="primary" />
     </q-drawer>
 
     <q-drawer show-if-above v-model="right" side="right" bordered>
