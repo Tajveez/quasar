@@ -21,6 +21,20 @@
     <q-drawer show-if-above v-model="left" side="left" bordered>
       <!-- drawer content -->
       <q-icon class="q-pa-md" name="fas fa-crow" size="lg" color="primary" />
+      <q-list>
+        <q-item to="/" clickable v-ripple>
+          <q-item-section avatar>
+            <q-icon color="primary" name="home" size="md"/>
+          </q-item-section>
+          <q-item-section class="text-h6 text-weight-bold">Home</q-item-section>
+        </q-item>
+        <q-item to="/about" clickable v-ripple>
+          <q-item-section avatar>
+            <q-icon color="primary" name="help" size="md"/>
+          </q-item-section>
+          <q-item-section class="text-h6 text-weight-bold">About</q-item-section>
+        </q-item>
+      </q-list>
     </q-drawer>
 
     <q-drawer show-if-above v-model="right" side="right" bordered>
