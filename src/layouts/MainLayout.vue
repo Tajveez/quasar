@@ -4,18 +4,16 @@
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="left = !left" />
 
-        <q-toolbar-title class="text-weight-bold">
-          Twitto
-        </q-toolbar-title>
+        <q-toolbar-title class="text-weight-bold"> Twitto </q-toolbar-title>
 
         <!-- <q-btn dense flat round icon="menu" @click="right = !right" /> -->
       </q-toolbar>
 
-      <q-tabs align="left">
+      <!-- <q-tabs align="left">
         <q-route-tab to="/page1" label="Page One" />
         <q-route-tab to="/page2" label="Page Two" />
         <q-route-tab to="/page3" label="Page Three" />
-      </q-tabs>
+      </q-tabs> -->
     </q-header>
 
     <q-drawer :width="280" show-if-above v-model="left" side="left" bordered>
@@ -24,26 +22,81 @@
       <q-list>
         <q-item to="/" clickable v-ripple>
           <q-item-section avatar>
-            <q-icon name="home" size="md"/>
+            <q-icon name="home" size="md" />
           </q-item-section>
           <q-item-section class="text-h6 text-weight-bold">Home</q-item-section>
         </q-item>
         <q-item to="/about" clickable v-ripple>
           <q-item-section avatar>
-            <q-icon name="help" size="md"/>
+            <q-icon name="help" size="md" />
           </q-item-section>
-          <q-item-section class="text-h6 text-weight-bold">About</q-item-section>
+          <q-item-section class="text-h6 text-weight-bold"
+            >About</q-item-section
+          >
         </q-item>
       </q-list>
     </q-drawer>
 
     <q-drawer show-if-above v-model="right" side="right" bordered>
       <!-- drawer content -->
-        <q-input class="q-ma-md" outlined rounded dense label="Search Twitto">
+      <q-input class="q-ma-md" outlined rounded dense label="Search Twitto">
         <template v-slot:prepend>
           <q-icon name="search" />
         </template>
       </q-input>
+
+      <q-list separator padding>
+        <q-item class="q-pa-md">
+          <q-item-section>
+            <q-item-label overline class="text-grey">Education</q-item-label>
+            <q-item-label class="text-weight-bold"
+              >Single line item</q-item-label
+            >
+            <q-item-label caption
+              >Secondary line text. Lorem ipsum dolor sit amet, consectetur
+              adipiscit elit.</q-item-label
+            >
+          </q-item-section>
+
+          <q-item-section side top>
+            <q-item-label caption>5 min ago</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item class="q-pa-md">
+          <q-item-section>
+            <q-item-label overline class="text-grey">Education</q-item-label>
+            <q-item-label class="text-weight-bold"
+              >Single line item</q-item-label
+            >
+            <q-item-label caption
+              >Secondary line text. Lorem ipsum dolor sit amet, consectetur
+              adipiscit elit.</q-item-label
+            >
+          </q-item-section>
+
+          <q-item-section side top>
+            <q-item-label caption>5 min ago</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item class="q-pa-md">
+          <q-item-section>
+            <q-item-label overline class="text-grey">Education</q-item-label>
+            <q-item-label class="text-weight-bold"
+              >Single line item</q-item-label
+            >
+            <q-item-label caption
+              >Secondary line text. Lorem ipsum dolor sit amet, consectetur
+              adipiscit elit.</q-item-label
+            >
+          </q-item-section>
+
+          <q-item-section side top>
+            <q-item-label caption>5 min ago</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
     </q-drawer>
 
     <q-page-container>
@@ -57,8 +110,8 @@ export default {
   data() {
     return {
       left: false,
-      right: false
+      right: false,
     };
-  }
+  },
 };
 </script>
