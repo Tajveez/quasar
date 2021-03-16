@@ -39,6 +39,11 @@
 
     <q-drawer show-if-above v-model="right" side="right" bordered>
       <!-- drawer content -->
+        <q-input class="q-ma-md" outlined rounded dense label="Search Twitto">
+        <template v-slot:prepend>
+          <q-icon name="search" />
+        </template>
+      </q-input>
     </q-drawer>
 
     <q-page-container>
