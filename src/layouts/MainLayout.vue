@@ -4,7 +4,12 @@
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="left = !left" />
 
-        <q-toolbar-title class="text-weight-bold"> Twitto </q-toolbar-title>
+        <q-toolbar-title class="text-weight-bold">
+          <span class="gt-sm">
+            Twitto 
+          </span>
+          <q-icon class="q-pa-md lt-md header-icon" name="fas fa-crow" size="sm" color="primary" />
+        </q-toolbar-title>
 
         <!-- <q-btn dense flat round icon="menu" @click="right = !right" /> -->
       </q-toolbar>
@@ -115,3 +120,11 @@ export default {
   },
 };
 </script>
+<style lang="sass">
+.header-icon 
+  position: absolute
+  bottom: 0
+  left: 50%
+  transform: translateX(50%)
+
+</style>
