@@ -118,9 +118,9 @@ export default {
   data() {
     return {
       left: false,
-      right: false,
+      right: false
     };
-  },
+  }
 };
 </script>
 <style lang="sass">
