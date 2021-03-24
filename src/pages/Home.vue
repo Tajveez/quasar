@@ -48,7 +48,7 @@ export default {
 .new-twitt
   textarea
     font-size: 19px
-    line-height: 1.4
+    line-height: 1.5
 .divider
   border-top: 1px solid
   border-bottom: 1px solid
