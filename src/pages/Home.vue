@@ -50,6 +50,12 @@
             ratione eum distinctio, inventore eos voluptatem blanditiis neque
             illum nostrum hic vel, quaerat architecto recusandae sequi.
           </q-item-label>
+          <div class="row">
+            <q-btn flat round color="grey" size="sm" icon="far fa-comment" />
+            <q-btn flat round color="grey" size="sm" icon="fas fa-retweet" />
+            <q-btn flat round color="grey" size="sm" icon="far fa-heart" />
+            <q-btn flat round color="grey" size="sm" icon="fas fa-trash" />
+          </div>
         </q-item-section>
 
         <q-item-section side top>
