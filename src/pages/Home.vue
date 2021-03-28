@@ -34,18 +34,18 @@
 
     <q-list>
       <q-item class="q-py-md">
-        <q-item-section avatar>
+        <q-item-section avatar top>
           <q-avatar>
             <img src="https://cdn.quasar.dev/img/avatar2.jpg" />
           </q-avatar>
         </q-item-section>
 
-        <q-item-section>
+        <q-item-section class="text-subtitle1">
           <q-item-label>
             <strong>Brad Traversy</strong>
             <span class="text-grey-7"> @bradtraversy</span>
           </q-item-label>
-          <q-item-label>
+          <q-item-label class="twitt-content text-body1">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
             ratione eum distinctio, inventore eos voluptatem blanditiis neque
             illum nostrum hic vel, quaerat architecto recusandae sequi.
@@ -81,4 +81,6 @@ export default {
   border-top: 1px solid
   border-bottom: 1px solid
   border-color: $grey-4
+.twitt-content
+  white-space: pre-line
 </style>
