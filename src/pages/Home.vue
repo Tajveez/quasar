@@ -50,7 +50,7 @@
             ratione eum distinctio, inventore eos voluptatem blanditiis neque
             illum nostrum hic vel, quaerat architecto recusandae sequi.
           </q-item-label>
-          <div class="row">
+          <div class="twitt-icons row justify-between">
             <q-btn flat round color="grey" size="sm" icon="far fa-comment" />
             <q-btn flat round color="grey" size="sm" icon="fas fa-retweet" />
             <q-btn flat round color="grey" size="sm" icon="far fa-heart" />
@@ -89,4 +89,6 @@ export default {
   border-color: $grey-4
 .twitt-content
   white-space: pre-line
+.twitt-icons
+  margin-left: -5px
 </style>
