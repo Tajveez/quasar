@@ -33,7 +33,7 @@
     <q-separator class="divider" size="10px" color="grey-2" />
 
     <q-list>
-      <q-item class="q-py-md">
+      <q-item class="q-py-md" v-for="twitt in twittsData" :key="twitt.date">
         <q-item-section avatar top>
           <q-avatar>
             <img src="https://cdn.quasar.dev/img/avatar2.jpg" />
@@ -46,9 +46,7 @@
             <span class="text-grey-7"> @bradtraversy</span>
           </q-item-label>
           <q-item-label class="twitt-content text-body1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-            ratione eum distinctio, inventore eos voluptatem blanditiis neque
-            illum nostrum hic vel, quaerat architecto recusandae sequi.
+            {{ twitt.content }}
           </q-item-label>
           <div class="twitt-icons row justify-between">
             <q-btn flat round color="grey" size="sm" icon="far fa-comment" />
@@ -59,7 +57,7 @@
         </q-item-section>
 
         <q-item-section side top>
-          1 min ago
+          {{ twitt.date }}
         </q-item-section>
       </q-item>
 
@@ -73,7 +71,36 @@ export default {
   name: "PageHome",
   data() {
     return {
-      newTwittoContent
+      newTwittoContent: "",
+      twittsData: [
+        {
+          content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore commodi
+        natus voluptate ipsam deleniti! Dicta magni aut doloremque maxime,
+        quidem illo necessitatibus a quas ea molestias quibusdam quam architecto
+        asperiores aliquam tempore labore voluptas. Esse, iure ipsum?
+        Praesentium magnam animi illum consequatur voluptatum cumque fugiat
+        obcaecati doloribus. Sequi, nostrum nisi.`,
+          date: 1617213599658
+        },
+        {
+          content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore commodi
+        natus voluptate ipsam deleniti! Dicta magni aut doloremque maxime,
+        quidem illo necessitatibus a quas ea molestias quibusdam quam architecto
+        asperiores aliquam tempore labore voluptas. Esse, iure ipsum?
+        Praesentium magnam animi illum consequatur voluptatum cumque fugiat
+        obcaecati doloribus. Sequi, nostrum nisi.`,
+          date: 1617213618455
+        },
+        {
+          content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore commodi
+        natus voluptate ipsam deleniti! Dicta magni aut doloremque maxime,
+        quidem illo necessitatibus a quas ea molestias quibusdam quam architecto
+        asperiores aliquam tempore labore voluptas. Esse, iure ipsum?
+        Praesentium magnam animi illum consequatur voluptatum cumque fugiat
+        obcaecati doloribus. Sequi, nostrum nisi.`,
+          date: 1617213626668
+        }
+      ]
     };
   }
 };
