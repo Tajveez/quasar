@@ -32,7 +32,7 @@
     </div>
     <q-separator class="divider" size="10px" color="grey-2" />
 
-    <q-list>
+    <q-list separator>
       <q-item class="q-py-md" v-for="twitt in twittsData" :key="twitt.date">
         <q-item-section avatar top>
           <q-avatar>
