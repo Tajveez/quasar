@@ -57,7 +57,7 @@
         </q-item-section>
 
         <q-item-section side top>
-          {{ twitt.date }}
+          {{ twitt.date | relativeDate }}
         </q-item-section>
       </q-item>
 
@@ -67,6 +67,7 @@
 </template>
 
 <script>
+import { formatDistance } from "date-fns";
 export default {
   name: "PageHome",
   data() {
@@ -102,6 +103,11 @@ export default {
         }
       ]
     };
+  },
+  filters: {
+    relativeDate(value) {
+      return formatDistance(value, new Date());
+    }
   }
 };
 </script>
