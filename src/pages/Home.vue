@@ -106,6 +106,7 @@ export default {
   },
   filters: {
     relativeDate(value) {
+      // converts dates into readable format
       return formatDistance(value, new Date());
     }
   }
