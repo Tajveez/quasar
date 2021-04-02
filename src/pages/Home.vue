@@ -20,6 +20,7 @@
       </div>
       <div class="col col-shrink">
         <q-btn
+          @click="addNewTwitt"
           class="q-mb-lg"
           unelevated
           rounded
@@ -103,6 +104,21 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    addNewTwitt() {
+      if (this.newTwittoContent) {
+        this.twittsData = [
+          {
+            content: this.newTwittoContent,
+            date: Date.now()
+          },
+          ...this.twittsData
+        ];
+
+        this.newTwittoContent = "";
+      }
+    }
   },
   filters: {
     relativeDate(value) {
