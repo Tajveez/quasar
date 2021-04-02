@@ -53,7 +53,14 @@
             <q-btn flat round color="grey" size="sm" icon="far fa-comment" />
             <q-btn flat round color="grey" size="sm" icon="fas fa-retweet" />
             <q-btn flat round color="grey" size="sm" icon="far fa-heart" />
-            <q-btn flat round color="grey" size="sm" icon="fas fa-trash" />
+            <q-btn
+              @click="deleteTwitt(twitt)"
+              flat
+              round
+              color="grey"
+              size="sm"
+              icon="fas fa-trash"
+            />
           </div>
         </q-item-section>
 
@@ -118,6 +125,11 @@ export default {
 
         this.newTwittoContent = "";
       }
+    },
+    deleteTwitt(twitt) {
+      this.twittsData = this.twittsData.filter(
+        _twitt => _twitt.date !== twitt.date
+      );
     }
   },
   filters: {
