@@ -39,7 +39,11 @@
         enter-active-class="animated fadeIn slow"
         leave-active-class="animated fadeOut slow"
       >
-        <q-item class="q-py-md" v-for="twitt in twittsData" :key="twitt.date">
+        <q-item
+          class="twitto q-py-md"
+          v-for="twitt in twittsData"
+          :key="twitt.date"
+        >
           <q-item-section avatar top>
             <q-avatar>
               <img src="https://cdn.quasar.dev/img/avatar2.jpg" />
@@ -155,6 +159,8 @@ export default {
   border-top: 1px solid
   border-bottom: 1px solid
   border-color: $grey-4
+.twitto:not(:first-child)
+  border-top: 1px solid rgba(0,0,0,0.15)
 .twitt-content
   white-space: pre-line
 .twitt-icons
