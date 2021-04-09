@@ -106,7 +106,7 @@ export default {
       newTwittoContent: "",
       twittsData: [
         {
-          content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore commodi
+          content: `Lorem ipsums, dolor sit amet consectetur adipisicing elit. Dolore commodi
         natus voluptate ipsam deleniti! Dicta magni aut doloremque maxime,
         quidem illo necessitatibus a quas ea molestias quibusdam quam architecto
         asperiores aliquam tempore labore voluptas. Esse, iure ipsum?
