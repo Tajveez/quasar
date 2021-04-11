@@ -15,4 +15,5 @@ firebase.initializeApp(firebaseConfig)
 
 let db = firebase.firestore();
 
+// Exporting db for external use
 export default db
