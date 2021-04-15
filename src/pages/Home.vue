@@ -139,13 +139,12 @@ export default {
   methods: {
     addNewTwitt() {
       if (this.newTwittoContent) {
-        this.twittsData = [
-          {
-            content: this.newTwittoContent,
-            date: Date.now()
-          },
-          ...this.twittsData
-        ];
+        let newTwitt = {
+          content: this.newTwittoContent,
+          date: Date.now()
+        };
+        db.collection("twitt").add(newTwitt);
+        // this.twittsData = [newTwitt, ...this.twittsData];
 
         this.newTwittoContent = "";
       }
