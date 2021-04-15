@@ -98,6 +98,7 @@
 </template>
 
 <script>
+import db from "src/boot/firebase";
 import { formatDistance } from "date-fns";
 export default {
   name: "PageHome",
@@ -105,33 +106,33 @@ export default {
     return {
       newTwittoContent: "",
       twittsData: [
-        {
-          content: `Lorem ipsums, dolor sit amet consectetur adipisicing elit. Dolore commodi
-        natus voluptate ipsam deleniti! Dicta magni aut doloremque maxime,
-        quidem illo necessitatibus a quas ea molestias quibusdam quam architecto
-        asperiores aliquam tempore labore voluptas. Esse, iure ipsum?
-        Praesentium magnam animi illum consequatur voluptatum cumque fugiat
-        obcaecati doloribus. Sequi, nostrum nisi.`,
-          date: 1617213599658
-        },
-        {
-          content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore commodi
-        natus voluptate ipsam deleniti! Dicta magni aut doloremque maxime,
-        quidem illo necessitatibus a quas ea molestias quibusdam quam architecto
-        asperiores aliquam tempore labore voluptas. Esse, iure ipsum?
-        Praesentium magnam animi illum consequatur voluptatum cumque fugiat
-        obcaecati doloribus. Sequi, nostrum nisi.`,
-          date: 1617213618455
-        },
-        {
-          content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore commodi
-        natus voluptate ipsam deleniti! Dicta magni aut doloremque maxime,
-        quidem illo necessitatibus a quas ea molestias quibusdam quam architecto
-        asperiores aliquam tempore labore voluptas. Esse, iure ipsum?
-        Praesentium magnam animi illum consequatur voluptatum cumque fugiat
-        obcaecati doloribus. Sequi, nostrum nisi.`,
-          date: 1617213626668
-        }
+        // {
+        //   content: `Lorem ipsums, dolor sit amet consectetur adipisicing elit. Dolore commodi
+        // natus voluptate ipsam deleniti! Dicta magni aut doloremque maxime,
+        // quidem illo necessitatibus a quas ea molestias quibusdam quam architecto
+        // asperiores aliquam tempore labore voluptas. Esse, iure ipsum?
+        // Praesentium magnam animi illum consequatur voluptatum cumque fugiat
+        // obcaecati doloribus. Sequi, nostrum nisi.`,
+        //   date: 1617213599658
+        // },
+        // {
+        //   content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore commodi
+        // natus voluptate ipsam deleniti! Dicta magni aut doloremque maxime,
+        // quidem illo necessitatibus a quas ea molestias quibusdam quam architecto
+        // asperiores aliquam tempore labore voluptas. Esse, iure ipsum?
+        // Praesentium magnam animi illum consequatur voluptatum cumque fugiat
+        // obcaecati doloribus. Sequi, nostrum nisi.`,
+        //   date: 1617213618455
+        // },
+        // {
+        //   content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore commodi
+        // natus voluptate ipsam deleniti! Dicta magni aut doloremque maxime,
+        // quidem illo necessitatibus a quas ea molestias quibusdam quam architecto
+        // asperiores aliquam tempore labore voluptas. Esse, iure ipsum?
+        // Praesentium magnam animi illum consequatur voluptatum cumque fugiat
+        // obcaecati doloribus. Sequi, nostrum nisi.`,
+        //   date: 1617213626668
+        // }
       ]
     };
   },
@@ -160,6 +161,24 @@ export default {
       // converts dates into readable format
       return formatDistance(value, new Date());
     }
+  },
+  mounted() {
+    db.collection("twitt")
+      .orderBy("date")
+      .onSnapshot(snapshot => {
+        snapshot.docChanges().forEach(change => {
+          if (change.type === "added") {
+            console.log();
+            this.twittsData.unshift(change.doc.data());
+          }
+          if (change.type === "modified") {
+            console.log(change.doc.data());
+          }
+          if (change.type === "removed") {
+            console.log(change.doc.data());
+          }
+        });
+      });
   }
 };
 </script>
