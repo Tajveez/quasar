@@ -43,7 +43,7 @@
           <q-item
             class="twitto q-py-md"
             v-for="twitt in twittsData"
-            :key="twitt.date"
+            :key="twitt.id"
           >
             <q-item-section avatar top>
               <q-avatar>
@@ -150,9 +150,9 @@ export default {
       }
     },
     deleteTwitt(twitt) {
-      this.twittsData = this.twittsData.filter(
-        _twitt => _twitt.date !== twitt.date
-      );
+      db.collection("twitt")
+        .doc(twitt.id)
+        .delete();
     }
   },
   filters: {
@@ -166,15 +166,21 @@ export default {
       .orderBy("date")
       .onSnapshot(snapshot => {
         snapshot.docChanges().forEach(change => {
+          let _twittData = change.doc.data();
+          _twittData.id = change.doc.id;
           if (change.type === "added") {
             console.log();
-            this.twittsData.unshift(change.doc.data());
+            this.twittsData.unshift(_twittData);
           }
           if (change.type === "modified") {
-            console.log(change.doc.data());
+            console.log(_twittData);
           }
           if (change.type === "removed") {
-            console.log(change.doc.data());
+            console.log(_twittData);
+            let index = this.twittsData.findIndex(
+              twitt => twitt.id === _twittData.id
+            );
+            this.twittsData.splice(index, 1);
           }
         });
       });
